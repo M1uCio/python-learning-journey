@@ -6,5 +6,8 @@ with open("items.csv") as file:
         dish = {"name": name, "attribute": attribute}
         menu.append(dish)
 
-for dish in menu:
+def get_name(dish):
+    return dish["name"]
+
+for dish in sorted(menu, key=get_name):
     print(f"{dish['name']} is {dish['attribute'].lower()}")
