@@ -1,8 +1,10 @@
-with open("items.txt", "r") as file:
-    position = 0
-    for line in sorted(file, reverse=True):
-        position += 1
-        print(position,line, sep=".", end="")
+menu = []
 
+with open("items.csv") as file:
+    for line in file:
+        name, attribute = line.rstrip().split(",")
+        dish = {"name": name, "attribute": attribute}
+        menu.append(dish)
 
-
+for dish in menu:
+    print(f"{dish['name']} is {dish['attribute'].lower()}")
