@@ -1,11 +1,8 @@
 import csv
 
-menu = []
+name = input("What's the dish's name?: ")
+attribute = input("Is it fastfood or fit?: ")
 
-with open("items.csv") as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        menu.append({"name": row["name"], "attribute": row["attribute"]})
-
-for dish in sorted(menu, key=lambda dish: dish["name"]):
-    print(f"{dish['name']} is {dish['attribute'].lower()}")
+with open("items.csv", "a", newline="") as file:
+    writer = csv.DictWriter(file, fieldnames=["name", "attribute"])
+    writer.writerow({"name": name, "attribute": attribute})
