@@ -1,3 +1,4 @@
+#I didnt know the diffrence between csv and json, thats why its called json-files even though its csv
 import csv
 
 name = input("What's the dish's name?: ")
