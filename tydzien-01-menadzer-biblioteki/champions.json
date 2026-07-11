@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Nasus",
+        "damagetype": "AD",
+        "lane": "Top"
+    },
+    {
+        "name": "Fiora",
+        "damagetype": "AD",
+        "lane": "Top"
+    },
+    {
+        "name": "Nocturne",
+        "damagetype": "AD",
+        "lane": "Jungle"
+    },
+    {
+        "name": "Veigar",
+        "damagetype": "AP",
+        "lane": "Mid"
+    },
+    {
+        "name": "Sivir",
+        "damagetype": "AD",
+        "lane": "ADC"
+    },
+    {
+        "name": "Rell",
+        "damagetype": "AP",
+        "lane": "Support"
+    }
+]
