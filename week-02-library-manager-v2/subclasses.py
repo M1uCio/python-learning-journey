@@ -28,11 +28,41 @@ class  Developer(Employee):
         super().__init__(first, last, pay)
         self.prog_lang = prog_lang
 
+class Manager(Employee):
 
-emp_str_1 = "Michał-Kowalczyk-5000"
-emp_str_2 = "Kamil-Gałuszka-3000"
+    def __init__(self, first, last, pay, employees=None):
+        super().__init__(first, last, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
 
-emp_1 = Developer.from_string(emp_str_1)
-emp_2 = Developer.from_string(emp_str_2)
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
 
-print(emp_1.__dict__)
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+    
+    def print_emps(self):
+        for i, emp in enumerate(self.employees):
+            print(f"{i+1}. {emp.full_name()}")
+
+
+dev_1 = Developer("Michał","Kowalczyk",5000,"Python")
+dev_2 = Developer("Kamil","Gałuszka",3000,"C++")
+
+mng_1 = Manager("Maciej","Michalczyk",7000,[dev_1])
+
+print(mng_1.email)
+
+mng_1.print_emps()
+
+mng_1.add_emp(dev_2)
+
+mng_1.print_emps()
+
+mng_1.remove_emp(dev_1)
+
+mng_1.print_emps()
